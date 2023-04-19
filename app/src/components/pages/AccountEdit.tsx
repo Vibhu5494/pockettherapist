@@ -152,7 +152,6 @@ console.log(typeof state?.firstName,'state?.firstName');
   function save() {
     if (state?.firstName===undefined ||state?.lastName===undefined) {
       setError(true)
-      
     } else {
       const updateUserDto = state;
       const updateUserId = state._id;
