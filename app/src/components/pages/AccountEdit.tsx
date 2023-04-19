@@ -154,20 +154,19 @@ console.log(typeof state?.firstName,'state?.firstName');
       setError(true)
       
     } else {
-      setError(false)
-    //   const updateUserDto = state;
-    //   const updateUserId = state._id;
-    //   // @ts-ignore
-    //   // updateUserDto,
-    //   from(dispatch(updateAccount({ updateUserDto, userId: updateUserId })))
-    //     .pipe(
-    //       // @ts-ignore
-    //       switchMap(() => dispatch(loadProfile(userId))),
-    //       // @ts-ignore
-    //       switchMap(() => dispatch(loadUser())),
-    //       take(1)
-    //     )
-    //     .subscribe(() => viewAccount({ userId }));
+      const updateUserDto = state;
+      const updateUserId = state._id;
+      // @ts-ignore
+      // updateUserDto,
+      from(dispatch(updateAccount({ updateUserDto, userId: updateUserId })))
+        .pipe(
+          // @ts-ignore
+          switchMap(() => dispatch(loadProfile(userId))),
+          // @ts-ignore
+          switchMap(() => dispatch(loadUser())),
+          take(1)
+        )
+        .subscribe(() => viewAccount({ userId }));
     }
     }
 };

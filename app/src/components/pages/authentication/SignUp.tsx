@@ -42,7 +42,6 @@ const SignUpComponent = ({ }: PageProps) => {
   });
 
   const { element, onToggleSnackBar, setMessage } = useSnack();
-  console.log(element, 'element');
 
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
